@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProdLink Capital — Investors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --primary:#2d6361; --primary-2:#3f7f7c; --ink:#0d1b1a; --muted:#4f6664; --line:rgba(45,99,97,0.18); --panel:#fff; --glow:0 24px 64px rgba(45,99,97,0.14); }
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:'Space Grotesk',system-ui,-apple-system,sans-serif;background:radial-gradient(circle at 15% 15%,rgba(45,99,97,0.12) 0,transparent 30%),#eef2f1;color:var(--ink);padding:28px;min-height:100vh;}
+    .shell{max-width:1200px;margin:0 auto;}
+    a.back{color:var(--primary);font-weight:700;text-decoration:none;} a.back:hover{text-decoration:underline;}
+    .hero{padding:22px;border-radius:18px;background:linear-gradient(135deg,#1f4745,#2d6361);color:#fff;box-shadow:var(--glow);position:relative;overflow:hidden;margin:10px 0 16px;}
+    .lang-switch{position:absolute;top:12px;right:12px;display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.14);padding:8px 10px;border-radius:12px;border:1px solid rgba(255,255,255,0.24);}
+    .lang-switch label{font-weight:600;font-size:13px;color:#e9f1ef;}
+    .lang-switch select{border:none;border-radius:10px;padding:8px 10px;background:rgba(255,255,255,0.92);color:#1f4745;font-weight:700;outline:none;}
+    h1{margin:6px 0 4px;letter-spacing:-0.3px;}
+    .lead{margin:0;color:rgba(255,255,255,0.85);max-width:780px;}
+    .grid{display:grid;grid-template-columns:2fr 1fr;gap:14px;align-items:start;}
+    @media(max-width:900px){.grid{grid-template-columns:1fr;}}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--glow);}
+    .project{display:grid;gap:8px;border-bottom:1px solid var(--line);padding:10px 0;}
+    .project:last-child{border-bottom:none;}
+    .pill{display:inline-flex;padding:6px 10px;border-radius:999px;background:rgba(45,99,97,0.12);color:var(--primary-2);font-weight:700;font-size:12px;border:1px solid rgba(45,99,97,0.2);}
+    .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;}
+    .muted{color:var(--muted);}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 12px;border-radius:10px;background:var(--primary);color:#fff;font-weight:800;text-decoration:none;border:none;cursor:pointer;}
+    .btn.ghost{background:#f5f7f6;color:var(--primary);border:1px solid var(--line);}
+    label{display:grid;gap:6px;font-weight:700;color:var(--ink);font-size:14px;margin-bottom:8px;}
+    input{padding:10px;border-radius:10px;border:1px solid var(--line);background:#f5f7f6;font-family:inherit;}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <a class="back" href="crowdfunding.html" data-i18n="back">← Back to capital hub</a>
+    <section class="hero">
+      <div class="lang-switch">
+        <label data-i18n="language">Language</label>
+        <select id="langSelect">
+          <option value="en">English</option><option value="ar">العربية</option><option value="fr">Français</option><option value="ur">اردو</option><option value="hi">हिन्दी</option><option value="ru">Русский</option>
+        </select>
+      </div>
+      <div class="pill" data-i18n="pill">For Investors</div>
+      <h1 data-i18n="title">Choose a factory project to fund</h1>
+      <p class="lead" data-i18n="lead">Review business plans, ROIs, sectors, locations, required capital, and share structures. Download decks, and request a meeting after registering.</p>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <div class="project">
+          <div class="pill" data-i18n="p1Tag">Low-carbon steel</div>
+          <h3 data-i18n="p1Title">Sohar Green Steel Line</h3>
+          <div class="row muted">
+            <span data-i18n="country">Country</span>: <strong>Oman</strong>
+            <span data-i18n="sector">Sector</span>: <strong>Metals</strong>
+            <span data-i18n="roi">ROI</span>: <strong>18-22% / 3 yrs</strong>
+            <span data-i18n="capital">Capital needed</span>: <strong>$2.5M</strong>
+            <span data-i18n="shares">Shares</span>: <strong data-i18n="equity">Equity</strong>
+          </div>
+          <p class="muted" data-i18n="p1Body">Electric-arc retrofit cutting emissions 35% with pre-signed offtake for green billets.</p>
+          <div class="row">
+            <a class="btn" href="#" data-i18n="downloadPlan">Download business plan</a>
+            <a class="btn ghost" href="#" data-i18n="downloadDeck">Download pitch deck</a>
+          </div>
+          <div class="muted" data-i18n="contactHint">Contacts and presentations unlock after registration.</div>
+        </div>
+        <div class="project">
+          <div class="pill" data-i18n="p2Tag">Foodtech</div>
+          <h3 data-i18n="p2Title">Sharjah Aseptic Beverage Plant</h3>
+          <div class="row muted">
+            <span data-i18n="country">Country</span>: <strong>UAE</strong>
+            <span data-i18n="sector">Sector</span>: <strong>Beverages</strong>
+            <span data-i18n="roi">ROI</span>: <strong>20% / 2 yrs</strong>
+            <span data-i18n="capital">Capital needed</span>: <strong>$1.8M</strong>
+            <span data-i18n="shares">Shares</span>: <strong data-i18n="convertible">Convertible</strong>
+          </div>
+          <p class="muted" data-i18n="p2Body">AI-driven demand planning with chilled distribution to 12-country network.</p>
+          <div class="row">
+            <a class="btn" href="#" data-i18n="downloadPlan">Download business plan</a>
+            <a class="btn ghost" href="#" data-i18n="downloadDeck">Download pitch deck</a>
+          </div>
+          <div class="muted" data-i18n="contactHint">Contacts and presentations unlock after registration.</div>
+        </div>
+        <div class="project">
+          <div class="pill" data-i18n="p3Tag">Advanced packaging</div>
+          <h3 data-i18n="p3Title">Manama Smart Packaging Fab</h3>
+          <div class="row muted">
+            <span data-i18n="country">Country</span>: <strong>Bahrain</strong>
+            <span data-i18n="sector">Sector</span>: <strong>Packaging</strong>
+            <span data-i18n="roi">ROI</span>: <strong>16% / 2.5 yrs</strong>
+            <span data-i18n="capital">Capital needed</span>: <strong>$1.2M</strong>
+            <span data-i18n="shares">Shares</span>: <strong data-i18n="revenueShare">Revenue share</strong>
+          </div>
+          <p class="muted" data-i18n="p3Body">High-yield line (95%) supplying IoT device makers across GCC and North Africa.</p>
+          <div class="row">
+            <a class="btn" href="#" data-i18n="downloadPlan">Download business plan</a>
+            <a class="btn ghost" href="#" data-i18n="downloadDeck">Download pitch deck</a>
+          </div>
+          <div class="muted" data-i18n="contactHint">Contacts and presentations unlock after registration.</div>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h3 data-i18n="registerTitle">Register to unlock contacts</h3>
+        <p class="muted" data-i18n="registerBody">Get founder contact links, schedule a presentation, and bookmark projects.</p>
+        <form>
+          <label data-i18n="nameLabel">Full name
+            <input type="text" placeholder="e.g. Sarah Khan" data-i18n="namePlaceholder" data-i18n-target="placeholder" />
+          </label>
+          <label data-i18n="emailLabel">Email
+            <input type="email" placeholder="you@company.com" data-i18n="emailPlaceholder" data-i18n-target="placeholder" />
+          </label>
+          <label data-i18n="roleLabel">Role / firm
+            <input type="text" placeholder="e.g. GP, family office" data-i18n="rolePlaceholder" data-i18n-target="placeholder" />
+          </label>
+          <button class="btn" type="button" data-i18n="registerCta">Register & request meeting</button>
+        </form>
+      </aside>
+    </div>
+  </div>
+  <script>
+    const translations = {
+      en:{back:"← Back to capital hub",language:"Language",pill:"For Investors",title:"Choose a factory project to fund",lead:"Review business plans, ROIs, sectors, locations, required capital, and share structures. Download decks, and request a meeting after registering.",country:"Country",sector:"Sector",roi:"ROI",capital:"Capital needed",shares:"Shares",equity:"Equity",convertible:"Convertible",revenueShare:"Revenue share",downloadPlan:"Download business plan",downloadDeck:"Download pitch deck",contactHint:"Contacts and presentations unlock after registration.",p1Tag:"Low-carbon steel",p1Title:"Sohar Green Steel Line",p1Body:"Electric-arc retrofit cutting emissions 35% with pre-signed offtake for green billets.",p2Tag:"Foodtech",p2Title:"Sharjah Aseptic Beverage Plant",p2Body:"AI-driven demand planning with chilled distribution to 12-country network.",p3Tag:"Advanced packaging",p3Title:"Manama Smart Packaging Fab",p3Body:"High-yield line (95%) supplying IoT device makers across GCC and North Africa.",registerTitle:"Register to unlock contacts",registerBody:"Get founder contact links, schedule a presentation, and bookmark projects.",nameLabel:"Full name",namePlaceholder:"e.g. Sarah Khan",emailLabel:"Email",emailPlaceholder:"you@company.com",roleLabel:"Role / firm",rolePlaceholder:"e.g. GP, family office",registerCta:"Register & request meeting"},
+      ar:{back:"← العودة إلى بوابة التمويل",language:"اللغة",pill:"للمستثمرين",title:"اختر مشروع مصنع لتمويله",lead:"راجع خطط الأعمال والعوائد والقطاعات والمواقع ورأس المال المطلوب وأنواع الحصص. حمّل العروض واطلب اجتماعاً بعد التسجيل.",country:"الدولة",sector:"القطاع",roi:"العائد",capital:"رأس المال المطلوب",shares:"نوع الحصص",equity:"حصص ملكية",convertible:"سندات قابلة للتحويل",revenueShare:"مشاركة إيرادات",downloadPlan:"تحميل خطة العمل",downloadDeck:"تحميل العرض",contactHint:"روابط الاتصال والعروض متاحة بعد التسجيل.",p1Tag:"فولاذ منخفض الكربون",p1Title:"خط الصلب الأخضر في صحار",p1Body:"تحديث قوس كهربائي يخفض الانبعاثات 35٪ مع عقود بيع مسبقة للفولاذ الأخضر.",p2Tag:"فودتك",p2Title:"مصنع مشروبات معقمة في الشارقة",p2Body:"تخطيط طلبات بالذكاء الاصطناعي وتوزيع مبرد إلى 12 دولة.",p3Tag:"تغليف متقدم",p3Title:"مصنع التغليف الذكي في المنامة",p3Body:"خط إنتاج عالي العائد (95٪) يزوّد مصنعي أجهزة إنترنت الأشياء في الخليج وشمال أفريقيا.",registerTitle:"سجّل لفتح بيانات الاتصال",registerBody:"احصل على روابط المؤسسين وحدد اجتماعاً واحفظ المشاريع.",nameLabel:"الاسم الكامل",namePlaceholder:"مثال: سارة خان",emailLabel:"البريد الإلكتروني",emailPlaceholder:"you@company.com",roleLabel:"الدور / الشركة",rolePlaceholder:"مثال: صندوق، عائلة",registerCta:"سجّل واطلب اجتماعاً"},
+      fr:{back:"← Retour au hub capital",language:"Langue",pill:"Pour les investisseurs",title:"Choisissez un projet d'usine à financer",lead:"Consultez business plans, ROI, secteurs, pays, capital requis et types de parts. Téléchargez les decks et demandez une réunion après inscription.",country:"Pays",sector:"Secteur",roi:"ROI",capital:"Capital requis",shares:"Parts",equity:"Actions",convertible:"Obligations convertibles",revenueShare:"Partage de revenus",downloadPlan:"Télécharger le business plan",downloadDeck:"Télécharger le pitch deck",contactHint:"Contacts et présentations après inscription.",p1Tag:"Acier bas carbone",p1Title:"Ligne acier vert de Sohar",p1Body:"Retrofit arc électrique -35% d'émissions avec offtake signé.",p2Tag:"Foodtech",p2Title:"Usine de boissons aseptiques de Sharjah",p2Body:"Planification IA et distribution réfrigérée vers 12 pays.",p3Tag:"Emballage avancé",p3Title:"Usine d'emballage intelligent de Manama",p3Body:"Rendement 95% pour fabricants IoT au CCG et Afrique du Nord.",registerTitle:"Inscrivez-vous pour débloquer les contacts",registerBody:"Obtenez les contacts fondateurs, planifiez une présentation et gardez vos projets favoris.",nameLabel:"Nom complet",namePlaceholder:"ex. Sarah Khan",emailLabel:"Email",emailPlaceholder:"you@company.com",roleLabel:"Rôle / société",rolePlaceholder:"ex. GP, family office",registerCta:"S'inscrire et demander une réunion"},
+      ur:{back:"← کیپیٹل ہب پر واپس جائیں",language:"زبان",pill:"سرمایہ کاروں کے لیے",title:"فیکٹری منصوبہ منتخب کریں",lead:"بزنس پلان، ROI، شعبے، ممالک، مطلوب سرمایہ، اور حصص کی اقسام دیکھیں۔ ڈیکس ڈاؤنلوڈ کریں اور رجسٹریشن کے بعد ملاقات مانگیں۔",country:"ملک",sector:"شعبہ",roi:"عائد",capital:"درکار سرمایہ",shares:"حصص",equity:"ایکویٹی",convertible:"قابلِ تبدیل",revenueShare:"ریونیو شیئر",downloadPlan:"بزنس پلان ڈاؤنلوڈ کریں",downloadDeck:"پچ ڈیک ڈاؤنلوڈ کریں",contactHint:"رابطے اور پریزنٹیشنز رجسٹریشن کے بعد دستیاب ہیں۔",p1Tag:"کم کاربن اسٹیل",p1Title:"سوہَر گرین اسٹیل لائن",p1Body:"الیکٹرک آرک اپ گریڈ 35٪ اخراج کم، گرین بیلٹس کے معاہدے کے ساتھ۔",p2Tag:"فوڈٹیک",p2Title:"شارجہ ایسیپٹک بیوریج پلانٹ",p2Body:"AI طلب منصوبہ بندی اور ٹھنڈی ترسیل 12 ممالک کو۔",p3Tag:"ایڈوانسڈ پیکیجنگ",p3Title:"منامہ اسمارٹ پیکیجنگ فاب",p3Body:"95٪ ییلڈ لائن GCC اور شمالی افریقہ میں IoT مینوفیکچررز کو سپلائی۔",registerTitle:"روابط کھولنے کے لیے رجسٹر کریں",registerBody:"بانیوں کے روابط، پریزنٹیشن شیڈول، اور پروجیکٹس محفوظ کریں۔",nameLabel:"مکمل نام",namePlaceholder:"مثال: سارہ خان",emailLabel:"ای میل",emailPlaceholder:"you@company.com",roleLabel:"کردار / فرم",rolePlaceholder:"مثال: GP, فیملی آفس",registerCta:"رجسٹر کریں اور ملاقات مانگیں"},
+      hi:{back:"← कैपिटल हब पर वापस",language:"भाषा",pill:"निवेशकों के लिए",title:"फंड करने के लिए फैक्टरी प्रोजेक्ट चुनें",lead:"बिज़नेस प्लान, ROI, सेक्टर, देश, जरूरी पूँजी और शेयर संरचना देखें। डेक डाउनलोड करें और रजिस्ट्रेशन के बाद मीटिंग माँगें।",country:"देश",sector:"सेक्टर",roi:"ROI",capital:"जरूरी पूँजी",shares:"शेयर",equity:"इक्विटी",convertible:"कन्वर्टिबल",revenueShare:"राजस्व साझेदारी",downloadPlan:"बिज़नेस प्लान डाउनलोड करें",downloadDeck:"पिच डेक डाउनलोड करें",contactHint:"संपर्क और प्रस्तुति रजिस्ट्रेशन के बाद मिलेंगे।",p1Tag:"लो-कार्बन स्टील",p1Title:"सोहार ग्रीन स्टील लाइन",p1Body:"इलेक्ट्रिक-आर्क अपग्रेड 35% उत्सर्जन कम, ग्रीन बिलेट्स ऑफटेक साइन।",p2Tag:"फूडटेक",p2Title:"शारजाह एसेप्टिक बेवरेज प्लांट",p2Body:"AI डिमांड प्लानिंग, 12 देशों को ठंडा वितरण।",p3Tag:"एडवांस्ड पैकेजिंग",p3Title:"मनामा स्मार्ट पैकेजिंग फेब",p3Body:"95% यील्ड लाइन GCC और उत्तरी अफ्रीका के IoT निर्माताओं को सप्लाई।",registerTitle:"संपर्क खोलने के लिए पंजीकरण करें",registerBody:"संस्थापकों के संपर्क पाएं, प्रस्तुति तय करें, प्रोजेक्ट सहेजें।",nameLabel:"पूरा नाम",namePlaceholder:"उदा. सारा खान",emailLabel:"ईमेल",emailPlaceholder:"you@company.com",roleLabel:"भूमिका / फर्म",rolePlaceholder:"उदा. GP, फैमिली ऑफिस",registerCta:"पंजीकरण करें और मीटिंग माँगें"},
+      ru:{back:"← Назад к разделу капитала",language:"Язык",pill:"Для инвесторов",title:"Выберите проект завода для инвестиций",lead:"Изучайте бизнес-планы, ROI, отрасли, страны, требуемый капитал и тип долей. Скачивайте презентации и запрашивайте встречу после регистрации.",country:"Страна",sector:"Отрасль",roi:"ROI",capital:"Нужный капитал",shares:"Доли",equity:"Паи",convertible:"Конвертируемые",revenueShare:"Доля выручки",downloadPlan:"Скачать бизнес-план",downloadDeck:"Скачать презентацию",contactHint:"Контакты и презентации доступны после регистрации.",p1Tag:"Низкоуглеродная сталь",p1Title:"Линия зеленой стали в Сухаре",p1Body:"Модернизация дуговой печи, -35% выбросов, оффтейк на зеленые заготовки.",p2Tag:"Фудтех",p2Title:"Асептический завод напитков в Шардже",p2Body:"ИИ-планирование спроса и охлажденная логистика в 12 стран.",p3Tag:"Продвинутая упаковка",p3Title:"Умная упаковка Манамы",p3Body:"Линия с 95% выходом для производителей IoT в GCC и Северной Африке.",registerTitle:"Зарегистрируйтесь, чтобы открыть контакты",registerBody:"Получите контакты основателей, назначьте презентацию и сохраняйте проекты.",nameLabel:"Полное имя",namePlaceholder:"например, Сара Хан",emailLabel:"Email",emailPlaceholder:"you@company.com",roleLabel:"Роль / компания",rolePlaceholder:"например, GP, family office",registerCta:"Зарегистрироваться и запросить встречу"}
+    };
+    const langSelect=document.getElementById("langSelect");
+    const transEls=document.querySelectorAll("[data-i18n]");
+    function applyTranslations(lang){
+      const dict=translations[lang]||translations.en;
+      transEls.forEach(el=>{
+        const key=el.dataset.i18n;
+        const target=el.dataset.i18nTarget||"text";
+        const val=dict[key];
+        if(!val) return;
+        if(target==="placeholder") el.placeholder=val; else el.textContent=val;
+      });
+      document.documentElement.lang=lang;
+      document.documentElement.dir=["ar","ur"].includes(lang)?"rtl":"ltr";
+      langSelect.value=lang;
+    }
+    langSelect.addEventListener("change",()=>applyTranslations(langSelect.value));
+    applyTranslations("en");
+  </script>
+</body>
+</html>

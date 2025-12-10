@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProdLink Capital — Founders</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --primary:#2d6361; --primary-2:#3f7f7c; --ink:#0d1b1a; --muted:#4f6664; --line:rgba(45,99,97,0.18); --panel:#fff; --glow:0 24px 64px rgba(45,99,97,0.14); }
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:'Space Grotesk',system-ui,-apple-system,sans-serif;background:radial-gradient(circle at 15% 15%,rgba(45,99,97,0.12) 0,transparent 30%),#eef2f1;color:var(--ink);padding:28px;min-height:100vh;}
+    .shell{max-width:1200px;margin:0 auto;}
+    a.back{color:var(--primary);font-weight:700;text-decoration:none;} a.back:hover{text-decoration:underline;}
+    .hero{padding:22px;border-radius:18px;background:linear-gradient(135deg,#1f4745,#2d6361);color:#fff;box-shadow:var(--glow);position:relative;overflow:hidden;margin:10px 0 16px;}
+    .lang-switch{position:absolute;top:12px;right:12px;display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.14);padding:8px 10px;border-radius:12px;border:1px solid rgba(255,255,255,0.24);}
+    .lang-switch label{font-weight:600;font-size:13px;color:#e9f1ef;}
+    .lang-switch select{border:none;border-radius:10px;padding:8px 10px;background:rgba(255,255,255,0.92);color:#1f4745;font-weight:700;outline:none;}
+    h1{margin:6px 0 4px;letter-spacing:-0.3px;}
+    .lead{margin:0;color:rgba(255,255,255,0.85);max-width:780px;}
+    .grid{display:grid;grid-template-columns:2fr 1fr;gap:14px;align-items:start;}
+    @media(max-width:900px){.grid{grid-template-columns:1fr;}}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--glow);}
+    label{display:grid;gap:6px;font-weight:700;color:var(--ink);font-size:14px;margin-bottom:8px;}
+    input,textarea{padding:10px;border-radius:10px;border:1px solid var(--line);background:#f5f7f6;font-family:inherit;}
+    textarea{min-height:120px;resize:vertical;}
+    .upload {
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .muted { color: var(--muted); font-size: 13px; }
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 14px;border-radius:12px;background:var(--primary);color:#fff;font-weight:800;text-decoration:none;border:none;cursor:pointer;}
+    .tag{display:inline-flex;padding:6px 10px;border-radius:999px;background:rgba(45,99,97,0.12);color:var(--primary-2);font-weight:700;font-size:12px;border:1px solid rgba(45,99,97,0.2);}
+    .list{display:grid;gap:10px;}
+    .prompt{background:#f5f7f6;border:1px dashed var(--line);border-radius:12px;padding:12px;font-size:13px;color:var(--muted);white-space:pre-line;}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <a class="back" href="crowdfunding.html" data-i18n="back">← Back to capital hub</a>
+    <section class="hero">
+      <div class="lang-switch">
+        <label data-i18n="language">Language</label>
+        <select id="langSelect">
+          <option value="en">English</option><option value="ar">العربية</option><option value="fr">Français</option><option value="ur">اردو</option><option value="hi">हिन्दी</option><option value="ru">Русский</option>
+        </select>
+      </div>
+      <div class="tag" data-i18n="pill">For Founders</div>
+      <h1 data-i18n="title">Publish your factory campaign</h1>
+      <p class="lead" data-i18n="lead">Share your factory focus, ROI highlights, decks, and capital needs. Get guidance and sample decks to craft a winning raise.</p>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <form class="list">
+          <label data-i18n="nameLabel">Factory / project name
+            <input type="text" placeholder="e.g. Sohar Green Steel Line" data-i18n="namePlaceholder" data-i18n-target="placeholder" />
+          </label>
+          <label data-i18n="countryLabel">Country
+            <input type="text" placeholder="e.g. UAE" data-i18n="countryPlaceholder" data-i18n-target="placeholder" />
+          </label>
+          <label data-i18n="focusLabel">Production focus
+            <input type="text" placeholder="e.g. low-carbon steel billets, aseptic beverages, precision plastics" data-i18n="focusPlaceholder" data-i18n-target="placeholder" />
+          </label>
+          <label data-i18n="planLabel">Business plan / ROI highlights
+            <textarea placeholder="Summarize your plan, expected ROI, timelines, and certifications." data-i18n="planPlaceholder" data-i18n-target="placeholder"></textarea>
+            <div class="upload">
+              <input type="file" />
+              <span class="muted" data-i18n="uploadPlanHint">Upload your plan file (PDF/Doc) or paste above.</span>
+            </div>
+          </label>
+          <label data-i18n="deckLabel">Pitch deck / data room link
+            <input type="url" placeholder="https://yourdeck.com/link" data-i18n="deckPlaceholder" data-i18n-target="placeholder" />
+            <div class="upload">
+              <input type="file" />
+              <span class="muted" data-i18n="uploadDeckHint">Upload your pitch deck (PDF/PPT) or share the link.</span>
+            </div>
+          </label>
+          <label data-i18n="capitalLabel">Capital sought (USD)
+            <input type="number" placeholder="e.g. 2500000" data-i18n="capitalPlaceholder" data-i18n-target="placeholder" />
+          </label>
+          <label data-i18n="siteLabel">Website (optional)
+            <input type="url" placeholder="https://yourfactory.com" data-i18n="sitePlaceholder" data-i18n-target="placeholder" />
+          </label>
+          <button class="btn" type="button" data-i18n="submit">Publish my campaign</button>
+        </form>
+      </section>
+
+      <aside class="card list">
+        <div>
+          <div class="tag" data-i18n="samplesTag">Samples</div>
+          <h3 data-i18n="samplesTitle">Pitch decks & business plans</h3>
+          <ul class="list" style="padding:0;margin:8px 0 0;list-style:none;">
+            <li><a href="#" class="back" data-i18n="sample1">Download sample: Green steel deck</a></li>
+            <li><a href="#" class="back" data-i18n="sample2">Download sample: Foodtech plan</a></li>
+            <li><a href="#" class="back" data-i18n="sample3">Download sample: Packaging ROI brief</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="tag" data-i18n="promptTag">Need a prompt?</div>
+          <h3 data-i18n="promptTitle">Ask an LLM to draft your plan</h3>
+          <div class="prompt" data-i18n="promptText">Write a business plan for a [sector] factory in [country]. Include market size, customers, production capacity, certifications, CAPEX/OPEX, 3-year ROI, and hiring plan. Output a 10-slide outline with metrics.</div>
+        </div>
+      </aside>
+    </div>
+  </div>
+  <script>
+    const translations={
+      en:{back:"← Back to capital hub",language:"Language",pill:"For Founders",title:"Publish your factory campaign",lead:"Share your factory focus, ROI highlights, decks, and capital needs. Get guidance and sample decks to craft a winning raise.",nameLabel:"Factory / project name",namePlaceholder:"e.g. Sohar Green Steel Line",countryLabel:"Country",countryPlaceholder:"e.g. UAE",focusLabel:"Production focus",focusPlaceholder:"e.g. low-carbon steel billets, aseptic beverages, precision plastics",planLabel:"Business plan / ROI highlights",planPlaceholder:"Summarize your plan, expected ROI, timelines, and certifications.",uploadPlanHint:"Upload your plan file (PDF/Doc) or paste above.",deckLabel:"Pitch deck / data room link",deckPlaceholder:"https://yourdeck.com/link",uploadDeckHint:"Upload your pitch deck (PDF/PPT) or share the link.",capitalLabel:"Capital sought (USD)",capitalPlaceholder:"e.g. 2500000",siteLabel:"Website (optional)",sitePlaceholder:"https://yourfactory.com",submit:"Publish my campaign",samplesTag:"Samples",samplesTitle:"Pitch decks & business plans",sample1:"Download sample: Green steel deck",sample2:"Download sample: Foodtech plan",sample3:"Download sample: Packaging ROI brief",promptTag:"Need a prompt?",promptTitle:"Ask an LLM to draft your plan",promptText:"Write a business plan for a [sector] factory in [country]. Include market size, customers, production capacity, certifications, CAPEX/OPEX, 3-year ROI, and hiring plan. Output a 10-slide outline with metrics."},
+      ar:{back:"← العودة إلى بوابة التمويل",language:"اللغة",pill:"للمؤسسين",title:"انشر حملة مصنعك",lead:"شارك تركيز المصنع، أبرز العائد، العروض، واحتياجات رأس المال. احصل على إرشادات ونماذج عروض لصياغة حملة ناجحة.",nameLabel:"اسم المصنع / المشروع",namePlaceholder:"مثال: خط الصلب الأخضر في صحار",countryLabel:"الدولة",countryPlaceholder:"مثال: الإمارات",focusLabel:"تركيز الإنتاج",focusPlaceholder:"مثال: فولاذ منخفض الكربون، مشروبات معقمة، بلاستيك دقيق",planLabel:"خطة العمل / أبرز العائد",planPlaceholder:"لخّص خطتك والعائد المتوقع والجداول الزمنية والشهادات.",uploadPlanHint:"حمّل ملف الخطة (PDF/Doc) أو اكتب أعلاه.",deckLabel:"رابط العرض / البيانات",deckPlaceholder:"https://yourdeck.com/link",uploadDeckHint:"حمّل عرضك التقديمي (PDF/PPT) أو شارك الرابط.",capitalLabel:"رأس المال المطلوب (دولار)",capitalPlaceholder:"مثال 2500000",siteLabel:"الموقع (اختياري)",sitePlaceholder:"https://yourfactory.com",submit:"انشر حملتي",samplesTag:"نماذج",samplesTitle:"عروض وخطط أعمال",sample1:"تحميل نموذج: عرض الصلب الأخضر",sample2:"تحميل نموذج: خطة فودتك",sample3:"تحميل نموذج: موجز عائد التغليف",promptTag:"تحتاج برومبت؟",promptTitle:"اطلب من نموذج لغوي إعداد الخطة",promptText:"اكتب خطة عمل لمصنع [القطاع] في [الدولة]. تضمين حجم السوق، العملاء، الطاقة الإنتاجية، الشهادات، المصاريف الرأسمالية والتشغيلية، عائد 3 سنوات، وخطة التوظيف. قدّم مخططاً من 10 شرائح مع أرقام."},
+      fr:{back:"← Retour au hub capital",language:"Langue",pill:"Pour les fondateurs",title:"Publiez votre campagne d'usine",lead:"Partagez le focus, les points clés ROI, les decks et les besoins en capital. Accédez à des exemples pour bâtir une levée réussie.",nameLabel:"Nom de l'usine / du projet",namePlaceholder:"ex. Ligne acier vert Sohar",countryLabel:"Pays",countryPlaceholder:"ex. EAU",focusLabel:"Focus de production",focusPlaceholder:"ex. billettes acier bas carbone, boissons aseptiques, plastiques de précision",planLabel:"Plan d'affaires / points clés du ROI",planPlaceholder:"Résumez plan, ROI attendu, délais et certifications.",uploadPlanHint:"Téléchargez votre plan (PDF/Doc) ou collez-le ci-dessus.",deckLabel:"Lien pitch deck / data room",deckPlaceholder:"https://yourdeck.com/link",uploadDeckHint:"Téléchargez votre pitch deck (PDF/PPT) ou partagez le lien.",capitalLabel:"Capital recherché (USD)",capitalPlaceholder:"ex. 2500000",siteLabel:"Site web (optionnel)",sitePlaceholder:"https://yourfactory.com",submit:"Publier ma campagne",samplesTag:"Exemples",samplesTitle:"Pitch decks & plans",sample1:"Télécharger : deck acier vert",sample2:"Télécharger : plan foodtech",sample3:"Télécharger : brief ROI packaging",promptTag:"Besoin d'un prompt ?",promptTitle:"Demandez à un LLM de rédiger",promptText:"Rédige un business plan pour une usine [secteur] en [pays]. Inclure taille de marché, clients, capacité, certifications, CAPEX/OPEX, ROI à 3 ans et plan RH. Sortir un plan de 10 slides chiffré."},
+      ur:{back:"← کیپیٹل ہب پر واپس جائیں",language:"زبان",pill:"بانیوں کے لیے",title:"اپنی فیکٹری مہم شائع کریں",lead:"فیکٹری فوکس، ROI، ڈیکس، اور سرمائے کی ضرورت شیئر کریں۔ رہنمائی اور نمونے حاصل کریں۔",nameLabel:"فیکٹری / منصوبے کا نام",namePlaceholder:"مثال: سوہَر گرین اسٹیل لائن",countryLabel:"ملک",countryPlaceholder:"مثال: UAE",focusLabel:"پیداوار فوکس",focusPlaceholder:"مثال: کم کاربن اسٹیل، ایسیپٹک مشروبات، پریسژن پلاسٹک",planLabel:"بزنس پلان / ROI اہم نکات",planPlaceholder:"اپنی پلان، ROI، ٹائم لائن، اور سرٹیفیکیشن کا خلاصہ دیں۔",uploadPlanHint:"اپنی پلان فائل (PDF/Doc) اپ لوڈ کریں یا اوپر لکھیں۔",deckLabel:"پچ ڈیک / ڈیٹا روم لنک",deckPlaceholder:"https://yourdeck.com/link",uploadDeckHint:"اپنا پچ ڈیک (PDF/PPT) اپ لوڈ کریں یا لنک شیئر کریں۔",capitalLabel:"درکار سرمایہ (ڈالر)",capitalPlaceholder:"مثال 2500000",siteLabel:"ویب سائٹ (اختیاری)",sitePlaceholder:"https://yourfactory.com",submit:"میری مہم شائع کریں",samplesTag:"نمونے",samplesTitle:"پچ ڈیکس اور بزنس پلان",sample1:"نمونہ ڈاؤنلوڈ: گرین اسٹیل ڈیک",sample2:"نمونہ ڈاؤنلوڈ: فوڈٹیک پلان",sample3:"نمونہ ڈاؤنلوڈ: پیکیجنگ ROI بریف",promptTag:"پرامپٹ چاہیے؟",promptTitle:"LLM سے اپنی پلان لکھوائیں",promptText:"[ملک] میں [سیکٹر] فیکٹری کا بزنس پلان لکھیں۔ مارکیٹ سائز، گاہک، پیداواری صلاحیت، سرٹیفیکیشن، CAPEX/OPEX، 3 سالہ ROI، اور ہائرنگ پلان شامل کریں۔ 10 سلائیڈ آؤٹ لائن دیں۔"},
+      hi:{back:"← कैपिटल हब पर वापस",language:"भाषा",pill:"संस्थापकों के लिए",title:"अपनी फैक्टरी कैंपेन प्रकाशित करें",lead:"फैक्टरी फोकस, ROI, डेक और पूँजी की जरूरत साझा करें। मार्गदर्शन और सैंपल डेक्स पाएं।",nameLabel:"फैक्टरी / प्रोजेक्ट नाम",namePlaceholder:"उदा. सोहार ग्रीन स्टील लाइन",countryLabel:"देश",countryPlaceholder:"उदा. UAE",focusLabel:"उत्पादन फोकस",focusPlaceholder:"उदा. लो-कार्बन स्टील, एसेप्टिक बेवरेज, प्रिसीजन प्लास्टिक",planLabel:"बिज़नेस प्लान / ROI मुख्य बिंदु",planPlaceholder:"अपनी योजना, ROI, समय-सीमा और प्रमाणपत्र लिखें।",uploadPlanHint:"अपना प्लान (PDF/Doc) अपलोड करें या ऊपर लिखें।",deckLabel:"पिच डेक / डेटा रूम लिंक",deckPlaceholder:"https://yourdeck.com/link",uploadDeckHint:"अपना पिच डेक (PDF/PPT) अपलोड करें या लिंक साझा करें।",capitalLabel:"आवश्यक पूँजी (USD)",capitalPlaceholder:"उदा. 2500000",siteLabel:"वेबसाइट (वैकल्पिक)",sitePlaceholder:"https://yourfactory.com",submit:"मेरी कैंपेन प्रकाशित करें",samplesTag:"नमूने",samplesTitle:"पिच डेक्स और बिज़नेस प्लान",sample1:"सैंपल डाउनलोड: ग्रीन स्टील डेक",sample2:"सैंपल डाउनलोड: फूडटेक प्लान",sample3:"सैंपल डाउनलोड: पैकेजिंग ROI ब्रीफ",promptTag:"प्रॉम्प्ट चाहिए?",promptTitle:"LLM से योजना लिखवाएं",promptText:"[देश] में [सेक्टर] फैक्टरी के लिए बिज़नेस प्लान लिखें। मार्केट साइज़, ग्राहक, उत्पादन क्षमता, प्रमाणपत्र, CAPEX/OPEX, 3-वर्षीय ROI, और हायरिंग प्लान शामिल करें। 10-स्लाइड रूपरेखा दें।"},
+      ru:{back:"← Назад к разделу капитала",language:"Язык",pill:"Для основателей",title:"Опубликуйте кампанию завода",lead:"Делитесь фокусом, ROI, презентациями и потребностью в капитале. Получите примеры и подсказки для успешного раунда.",nameLabel:"Название завода / проекта",namePlaceholder:"например, Sohar Green Steel Line",countryLabel:"Страна",countryPlaceholder:"например, ОАЭ",focusLabel:"Производственный фокус",focusPlaceholder:"например, сталь с низким углеродом, асептические напитки, точные пластики",planLabel:"Бизнес-план / ключевые ROI",planPlaceholder:"Кратко план, ROI, сроки и сертификаты.",uploadPlanHint:"Загрузите файл плана (PDF/Doc) или введите выше.",deckLabel:"Ссылка на презентацию / data room",deckPlaceholder:"https://yourdeck.com/link",uploadDeckHint:"Загрузите презентацию (PDF/PPT) или поделитесь ссылкой.",capitalLabel:"Требуемый капитал (USD)",capitalPlaceholder:"например, 2500000",siteLabel:"Веб-сайт (необязательно)",sitePlaceholder:"https://yourfactory.com",submit:"Опубликовать кампанию",samplesTag:"Примеры",samplesTitle:"Презентации и бизнес-планы",sample1:"Скачать пример: зеленая сталь",sample2:"Скачать пример: план фудтех",sample3:"Скачать пример: ROI упаковки",promptTag:"Нужен промпт?",promptTitle:"Попросите LLM написать план",promptText:"Напиши бизнес-план для завода [отрасль] в [страна]. Включи размер рынка, клиентов, мощность, сертификаты, CAPEX/OPEX, ROI на 3 года и план найма. Выведи план из 10 слайдов с метриками."}
+    };
+    const langSelect=document.getElementById("langSelect");
+    const transEls=document.querySelectorAll("[data-i18n]");
+    function applyTranslations(lang){
+      const dict=translations[lang]||translations.en;
+      transEls.forEach(el=>{
+        const key=el.dataset.i18n;
+        const target=el.dataset.i18nTarget||"text";
+        const val=dict[key];
+        if(!val) return;
+        if(target==="placeholder") el.placeholder=val; else el.textContent=val;
+      });
+      document.documentElement.lang=lang;
+      document.documentElement.dir=["ar","ur"].includes(lang)?"rtl":"ltr";
+      langSelect.value=lang;
+    }
+    langSelect.addEventListener("change",()=>applyTranslations(langSelect.value));
+    applyTranslations("en");
+  </script>
+</body>
+</html>
