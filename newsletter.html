@@ -97,6 +97,55 @@
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 14px;
     }
+    .news-layout {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: 1.618fr 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+    .category {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: var(--glow);
+      display: grid;
+      gap: 14px;
+    }
+    .category-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .category-title {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: -0.3px;
+    }
+    .category-lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .story-grid {
+      display: grid;
+      gap: 14px;
+    }
+    .stack {
+      display: grid;
+      gap: 18px;
+    }
+    .gcc-bar {
+      grid-column: 1 / -1;
+    }
+    .bar-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
     .card {
       background: var(--panel);
       border: 1px solid var(--line);
@@ -124,6 +173,23 @@
     h3 { margin: 0; letter-spacing: -0.2px; }
     p { margin: 0; color: var(--muted); line-height: 1.5; }
     .meta { font-weight: 700; color: var(--primary); }
+    .card.feature { padding: 20px; border-radius: 18px; }
+    .card.feature h3 { font-size: 22px; }
+    .card.feature .thumb { height: 190px; }
+    .card.compact { padding: 14px; }
+    .card.compact .thumb { height: 120px; }
+    .card.bar { padding: 14px; display: grid; grid-template-columns: 120px 1fr; align-items: center; gap: 12px; }
+    .card.bar .thumb { height: 88px; }
+    .card.bar h3 { font-size: 16px; }
+    @media (max-width: 980px) {
+      .news-layout { grid-template-columns: 1fr; }
+      .bar-grid { grid-template-columns: 1fr; }
+      .card.bar { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .category { padding: 14px; }
+      .card.feature .thumb { height: 160px; }
+    }
   </style>
 </head>
 <body>
@@ -161,43 +227,87 @@
       <p class="lead" data-i18n="lead">Highlights of technology, production wins, and factory launches across the region.</p>
     </section>
 
-    <section class="grid" aria-label="Newsletter stories">
-      <article class="card">
-        <div class="thumb" style="--c1:#2d6361;--c2:#56a89c;"></div>
-        <span class="tag" data-i18n="story1Tag">Saudi Arabia</span>
-        <h3 data-i18n="story1Title">Riyadh composites plant scales to 24/7 automation</h3>
-        <p data-i18n="story1Body">Al-Nour Composites completed its robotics retrofit and hit 98% uptime, cutting defects by 22% and winning a new aviation contract.</p>
-      </article>
-      <article class="card">
-        <div class="thumb" style="--c1:#3f7f7c;--c2:#7bcfbe;"></div>
-        <span class="tag" data-i18n="story2Tag">UAE</span>
-        <h3 data-i18n="story2Title">Sharjah foodtech park ships its 10 millionth pack</h3>
-        <p data-i18n="story2Body">Cold-chain ready meals from GulfFresh now export to 12 countries after a rapid expansion supported by AI-driven demand planning.</p>
-      </article>
-      <article class="card">
-        <div class="thumb" style="--c1:#2d6361;--c2:#b8e4db;"></div>
-        <span class="tag" data-i18n="story3Tag">Oman</span>
-        <h3 data-i18n="story3Title">Sohar metals hub lights up green smelter</h3>
-        <p data-i18n="story3Body">A new electric-arc line reduces emissions by 35%, enabling certified low-carbon steel for regional construction megaprojects.</p>
-      </article>
-      <article class="card">
-        <div class="thumb" style="--c1:#336e8a;--c2:#a3cfff;"></div>
-        <span class="tag" data-i18n="story4Tag">Morocco</span>
-        <h3 data-i18n="story4Title">Casablanca textiles lab wins EU sustainability award</h3>
-        <p data-i18n="story4Body">The lab’s closed-loop dyeing process cuts water use by 60%, unlocking premium contracts with two global apparel brands.</p>
-      </article>
-      <article class="card">
-        <div class="thumb" style="--c1:#2d5778;--c2:#8bc2ff;"></div>
-        <span class="tag" data-i18n="story5Tag">Egypt</span>
-        <h3 data-i18n="story5Title">Alexandria pharma campus launches sterile line</h3>
-        <p data-i18n="story5Body">New fill-finish capacity doubles output for injectable therapies, with a GMP audit completed in record time.</p>
-      </article>
-      <article class="card">
-        <div class="thumb" style="--c1:#4f7a5f;--c2:#d3f2c2;"></div>
-        <span class="tag" data-i18n="story6Tag">Bahrain</span>
-        <h3 data-i18n="story6Title">Manama advanced packaging fab goes live</h3>
-        <p data-i18n="story6Body">The fab’s first production run hits 95% yield, supplying IoT device makers across the GCC and North Africa.</p>
-      </article>
+    <section class="news-layout" aria-label="Newsletter stories">
+      <div class="category">
+        <div class="category-head">
+          <h2 class="category-title" data-i18n="uaeTitle">The UAE News</h2>
+          <p class="category-lead" data-i18n="uaeLead">Local launches, export momentum, and foodtech production capacity.</p>
+        </div>
+        <div class="story-grid">
+          <article class="card feature">
+            <div class="thumb" style="--c1:#3f7f7c;--c2:#7bcfbe;"></div>
+            <span class="tag" data-i18n="story2Tag">UAE</span>
+            <h3 data-i18n="story2Title">Sharjah foodtech park ships its 10 millionth pack</h3>
+            <p data-i18n="story2Body">Cold-chain ready meals from GulfFresh now export to 12 countries after a rapid expansion supported by AI-driven demand planning.</p>
+          </article>
+          <article class="card feature">
+            <div class="thumb" style="--c1:#2d6361;--c2:#c7efe6;"></div>
+            <span class="tag">UAE</span>
+            <h3>MENAFactory backs Nepal founder with AED 15M to launch UAE bronze homeware line</h3>
+            <p>MENAFactory helped raise 15 million dirhams for a Nepalese founder to build the UAE's first bronze utensils factory for premium home production. The project creates skilled roles, revives artisan metallurgy, and shows how inclusive capital can spark new industries across the Emirates.</p>
+          </article>
+          <article class="card feature">
+            <div class="thumb" style="--c1:#1f4745;--c2:#f1b24a;"></div>
+            <span class="tag">UAE</span>
+            <h3>P&amp;G opens solar powered advanced chemistry plant with zero harmful waste</h3>
+            <p>The new UAE branch of P&amp;G uses AI guided reactors, solar energy, and closed loop purification to cut hazardous byproducts to zero. This is a clear call for global manufacturers: move high value chemistry to the UAE and scale cleaner production for the world.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="category">
+        <div class="category-head">
+          <h2 class="category-title" data-i18n="worldTitle">World News</h2>
+          <p class="category-lead" data-i18n="worldLead">Global factories, sustainability wins, and cross-border production moves.</p>
+        </div>
+        <div class="story-grid">
+          <article class="card feature">
+            <div class="thumb" style="--c1:#336e8a;--c2:#a3cfff;"></div>
+            <span class="tag" data-i18n="story4Tag">Morocco</span>
+            <h3 data-i18n="story4Title">Casablanca textiles lab wins EU sustainability award</h3>
+            <p data-i18n="story4Body">The lab’s closed-loop dyeing process cuts water use by 60%, unlocking premium contracts with two global apparel brands.</p>
+          </article>
+          <article class="card feature">
+            <div class="thumb" style="--c1:#2d5778;--c2:#8bc2ff;"></div>
+            <span class="tag" data-i18n="story5Tag">Egypt</span>
+            <h3 data-i18n="story5Title">Alexandria pharma campus launches sterile line</h3>
+            <p data-i18n="story5Body">New fill-finish capacity doubles output for injectable therapies, with a GMP audit completed in record time.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="category gcc-bar">
+        <div class="category-head">
+          <h2 class="category-title" data-i18n="gccTitle">GCC Countries</h2>
+          <p class="category-lead" data-i18n="gccLead">Regional scale-ups, automation wins, and GCC supply chain expansion.</p>
+        </div>
+        <div class="bar-grid">
+          <article class="card bar">
+            <div class="thumb" style="--c1:#2d6361;--c2:#56a89c;"></div>
+            <div>
+              <span class="tag" data-i18n="story1Tag">Saudi Arabia</span>
+              <h3 data-i18n="story1Title">Riyadh composites plant scales to 24/7 automation</h3>
+              <p data-i18n="story1Body">Al-Nour Composites completed its robotics retrofit and hit 98% uptime, cutting defects by 22% and winning a new aviation contract.</p>
+            </div>
+          </article>
+          <article class="card bar">
+            <div class="thumb" style="--c1:#2d6361;--c2:#b8e4db;"></div>
+            <div>
+              <span class="tag" data-i18n="story3Tag">Oman</span>
+              <h3 data-i18n="story3Title">Sohar metals hub lights up green smelter</h3>
+              <p data-i18n="story3Body">A new electric-arc line reduces emissions by 35%, enabling certified low-carbon steel for regional construction megaprojects.</p>
+            </div>
+          </article>
+          <article class="card bar">
+            <div class="thumb" style="--c1:#4f7a5f;--c2:#d3f2c2;"></div>
+            <div>
+              <span class="tag" data-i18n="story6Tag">Bahrain</span>
+              <h3 data-i18n="story6Title">Manama advanced packaging fab goes live</h3>
+              <p data-i18n="story6Body">The fab’s first production run hits 95% yield, supplying IoT device makers across the GCC and North Africa.</p>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
   </div>
   <script>
@@ -209,6 +319,12 @@
         tag: "Newsletter",
         title: "TechMENA — MENA Manufacturing Momentum",
         lead: "Highlights of technology, production wins, and factory launches across the region.",
+        worldTitle: "World News",
+        worldLead: "Global factories, sustainability wins, and cross-border production moves.",
+        gccTitle: "GCC Countries",
+        gccLead: "Regional scale-ups, automation wins, and GCC supply chain expansion.",
+        uaeTitle: "The UAE News",
+        uaeLead: "Local launches, export momentum, and foodtech production capacity.",
         story1Tag: "Saudi Arabia",
         story1Title: "Riyadh composites plant scales to 24/7 automation",
         story1Body: "Al-Nour Composites completed its robotics retrofit and hit 98% uptime, cutting defects by 22% and winning a new aviation contract.",
@@ -235,6 +351,12 @@
         tag: "النشرة",
         title: "تك-مينا — زخم التصنيع في المنطقة",
         lead: "أبرز أخبار التقنية، إنجازات الإنتاج، وافتتاح المصانع في أنحاء المنطقة.",
+        worldTitle: "أخبار العالم",
+        worldLead: "مصانع عالمية، إنجازات الاستدامة، وتحركات الإنتاج عبر الحدود.",
+        gccTitle: "دول مجلس التعاون",
+        gccLead: "توسعات إقليمية، نجاحات الأتمتة، ونمو سلاسل التوريد الخليجية.",
+        uaeTitle: "أخبار الإمارات",
+        uaeLead: "إطلاقات محلية، زخم التصدير، وقدرات إنتاج الفودتك.",
         story1Tag: "السعودية",
         story1Title: "مصنع مركبات الرياض ينتقل للتشغيل الآلي 24/7",
         story1Body: "أكمل مصنع النور تحديث الروبوتات وحقق 98٪ جاهزية، مع خفض العيوب 22٪ وفوز بعقد طيران جديد.",
@@ -261,6 +383,12 @@
         tag: "Newsletter",
         title: "TechMENA — Dynamique industrielle MENA",
         lead: "Temps forts tech, succès industriels et lancements d'usines dans la région.",
+        worldTitle: "Actualites mondiales",
+        worldLead: "Usines globales, victoires durables et mouvements de production transfrontaliers.",
+        gccTitle: "Pays du CCG",
+        gccLead: "Montées en puissance regionales, automatisation et expansion des chaines logistiques GCC.",
+        uaeTitle: "Actualites des EAU",
+        uaeLead: "Lancements locaux, elan a l'export et capacites foodtech.",
         story1Tag: "Arabie saoudite",
         story1Title: "Usine de composites à Riyad passe en 24/7 automatisé",
         story1Body: "Al-Nour Composites a terminé sa modernisation robotique, atteint 98 % de disponibilité, réduit les défauts de 22 % et décroché un contrat aéronautique.",
@@ -287,6 +415,12 @@
         tag: "نیوزلیٹر",
         title: "ٹیک مینا — مینوفیکچرنگ کی رفتار",
         lead: "ٹیکنالوجی کی جھلکیاں، پیداواری کامیابیاں، اور فیکٹری لانچز۔",
+        worldTitle: "عالمی خبریں",
+        worldLead: "عالمی فیکٹریاں، پائیداری کی کامیابیاں، اور سرحد پار پیداوار کی نقل و حرکت۔",
+        gccTitle: "جی سی سی ممالک",
+        gccLead: "علاقائی توسیع، آٹومیشن کامیابیاں، اور جی سی سی سپلائی چین میں اضافہ۔",
+        uaeTitle: "یو اے ای خبریں",
+        uaeLead: "مقامی لانچز، ایکسپورٹ رفتار، اور فوڈٹیک پیداوار۔",
         story1Tag: "سعودی عرب",
         story1Title: "ریاض کومپوزٹ پلانٹ 24/7 آٹومیشن پر منتقل",
         story1Body: "النور کومپوزٹس نے روبوٹکس اپ گریڈ مکمل کیا، 98٪ اپ ٹائم حاصل کیا، 22٪ نقائص کم کیے، اور نیا ایوی ایشن کنٹریکٹ جیتا۔",
@@ -313,6 +447,12 @@
         tag: "न्यूज़लेटर",
         title: "टेकMENA — विनिर्माण में रफ़्तार",
         lead: "टेक हाइलाइट्स, उत्पादन सफलताएँ, और फैक्टरी लॉन्च की झलकियाँ।",
+        worldTitle: "विश्व समाचार",
+        worldLead: "वैश्विक फैक्ट्रियां, सततता की जीतें, और सीमापार उत्पादन।",
+        gccTitle: "GCC देश",
+        gccLead: "क्षेत्रीय स्केल-अप, ऑटोमेशन सफलताएँ, और GCC सप्लाई चेन विस्तार।",
+        uaeTitle: "यूएई समाचार",
+        uaeLead: "स्थानीय लॉन्च, निर्यात गति, और फूडटेक क्षमता।",
         story1Tag: "सऊदी अरब",
         story1Title: "रियाद कंपोज़िट्स प्लांट 24/7 ऑटोमेशन पर",
         story1Body: "अल-नूर कंपोज़िट्स ने रोबोटिक्स अपग्रेड पूरा किया, 98% अपटाइम पाया, दोष 22% घटाए, और नया एविएशन कॉन्ट्रैक्ट जीता।",
@@ -339,6 +479,12 @@
         tag: "Рассылка",
         title: "TechMENA — импульс производства в MENA",
         lead: "Главные tech-новости, производственные успехи и запуск заводов по региону.",
+        worldTitle: "Мировые новости",
+        worldLead: "Глобальные заводы, победы в устойчивости и трансграничные производственные шаги.",
+        gccTitle: "Страны GCC",
+        gccLead: "Региональные масштабы, успехи автоматизации и расширение цепочек поставок GCC.",
+        uaeTitle: "Новости ОАЭ",
+        uaeLead: "Локальные запуски, экспортный импульс и рост foodtech производств.",
         story1Tag: "Саудовская Аравия",
         story1Title: "Завод композитов в Эр-Рияде переходит на 24/7 автоматизацию",
         story1Body: "Al-Nour Composites завершил роботизацию, достиг 98% аптайма, снизил дефекты на 22% и получил авиационный контракт.",

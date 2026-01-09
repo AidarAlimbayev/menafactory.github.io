@@ -144,6 +144,26 @@
       text-decoration: none;
     }
     .link:hover { text-decoration: underline; }
+    .hero-actions {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .btn.primary { background: #ffffff; color: #1f4745; }
+    .btn.ghost { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.35); color: #ffffff; }
     @media (max-width: 700px) {
       body { padding: 20px; }
       h1 { font-size: 28px; }
@@ -158,6 +178,7 @@
       <a href="catalogue.html">Marketplace</a>
       <a href="investor.html">Investors</a>
       <a href="founder.html">Founders</a>
+      <a href="profile.html">Profile</a>
       <a href="support.html">Support</a>
     </nav>
     <div class="mf-top-actions">
@@ -183,6 +204,9 @@
       <div class="eyebrow" data-i18n="eyebrow">ProdLink Hub · GCC + MENA</div>
       <h1 data-i18n="heroTitle">Explore manufacturing intelligence in three focused spaces.</h1>
       <p class="lead" data-i18n="heroLead">Jump into our latest newsletter, search the MENA manufacturers catalogue, or launch a crowdfunding campaign for new factories.</p>
+      <div class="hero-actions">
+        <a class="btn ghost" href="login.html">Sign in to continue</a>
+      </div>
     </section>
 
     <section class="grid" aria-label="Main destinations">

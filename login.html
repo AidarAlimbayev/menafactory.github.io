@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MENAFactory — Sign in</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     html,body{height:100%;}
     body{margin:0;font-family:'Space Grotesk',system-ui,-apple-system,sans-serif;background:#f7f9f8;color:#0d1b1a;display:flex;flex-direction:column;padding:24px;}
@@ -38,6 +41,7 @@
       <a href="catalogue.html">Marketplace</a>
       <a href="investor.html">Investors</a>
       <a href="founder.html">Founders</a>
+      <a href="profile.html">Profile</a>
       <a href="support.html">Support</a>
     </nav>
     <div class="mf-top-actions">
@@ -52,12 +56,12 @@
 
   <div class="card">
     <h2 style="margin:0 0 12px;">Sign in</h2>
-    <form>
+    <form id="loginForm">
       <label>Email
-        <input type="email" value="aidar.alimbayev.s@gmail.com" required>
+        <input type="email" name="email" value="aidar.alimbayev.s@gmail.com" autocomplete="email" required>
       </label>
       <label>Password
-        <input type="password" value="••••••••••" required>
+        <input type="password" name="password" value="••••••••••" autocomplete="current-password" required>
       </label>
       <div class="inline">
         <label style="flex-direction:row;align-items:center;gap:6px;font-weight:600;">
@@ -67,6 +71,7 @@
       </div>
       <button class="btn" type="submit">Sign in</button>
     </form>
+    <div class="inline" style="justify-content:center;margin-top:10px;color:#4f6664;">Demo sign-in sends you to your profile dashboard.</div>
     <div class="inline" style="justify-content:center;margin-top:12px;">Not registered? <a href="signup.html" style="margin-left:6px;">Create an account</a></div>
   </div>
   <script>
@@ -74,6 +79,18 @@
     const themeBtn = document.getElementById("themeToggle");
     if (fontBtn) fontBtn.addEventListener("click", ()=> document.documentElement.style.fontSize = document.documentElement.style.fontSize==="110%"?"100%":"110%");
     if (themeBtn) themeBtn.addEventListener("click", ()=> document.body.classList.toggle("theme-dark"));
+
+    const loginForm = document.getElementById("loginForm");
+    if (loginForm) {
+      loginForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!loginForm.checkValidity()) {
+          loginForm.reportValidity();
+          return;
+        }
+        window.location.href = "profile.html";
+      });
+    }
   </script>
 </body>
 </html>
